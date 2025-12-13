@@ -18,11 +18,17 @@ headers: {
   'Authorization': `Bearer ${API_KEY}`,
   'Content-Type': 'application/json'
 
-      }
-    )
-    return res.data.choices[0].message.content
-  } catch (err: any) {
-    return Error: ${err.message}
-  }
+      } 
+   {
+  const res = await client.chat.completions.create({
+    model: "gpt-4o-mini",
+    messages: [
+      { role: "system", content: "..." },
+      { role: "user", content: prompt }
+    ],
+  }); // <- close call with ); not just )
+  return res.data.choices[0].message.content;
+} catch (err: any) {
+  // handle error
 }
-
+   
