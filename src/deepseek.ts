@@ -13,10 +13,11 @@ export async function askDeepSeek(prompt: string): Promise<string> {
         temperature: 0.0
       },
       {
-        headers: {
-          'Authorization': Bearer ${API_KEY},
-          'Content-Type': 'application/json'
-        }
+       // Use a template literal
+headers: { 
+  'Authorization': `Bearer ${API_KEY}`,
+  'Content-Type': 'application/json'
+
       }
     )
     return res.data.choices[0].message.content
