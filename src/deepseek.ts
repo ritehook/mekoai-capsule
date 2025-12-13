@@ -19,16 +19,16 @@ headers: {
   'Content-Type': 'application/json'
 
       } 
-   {
-  const res = await client.chat.completions.create({
-    model: "gpt-4o-mini",
-    messages: [
-      { role: "system", content: "..." },
-      { role: "user", content: prompt }
-    ],
-  }); // <- close call with ); not just )
-  return res.data.choices[0].message.content;
-} catch (err: any) {
-  // handle error
+   {export function deepseek<T = any>(obj: any, path: string | string[]): T | undefined {
+  const keys = Array.isArray(path) ? path : String(path).split('.');
+  let current: any = obj;
+  for (const k of keys) {
+    if (current == null) return undefined;
+    current = current[k];
+  }
+  return current as T | undefined;
+}
+export default deepseek;
+  
 }
    
