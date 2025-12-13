@@ -1,4 +1,3 @@
-`tsx
 import { useState } from 'react'
 import { askDeepSeek } from './deepseek'
 
@@ -30,4 +29,4 @@ function App() {
 }
 
 export default App
-`
+
