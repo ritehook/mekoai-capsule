@@ -1,4 +1,3 @@
-`ts
 import axios from 'axios'
 
 const API_URL = 'https://api.deepseek.com/v1/chat/completions'
@@ -25,4 +24,4 @@ export async function askDeepSeek(prompt: string): Promise<string> {
     return Error: ${err.message}
   }
 }
-`
+
